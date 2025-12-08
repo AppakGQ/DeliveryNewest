@@ -1,0 +1,39 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@model DeliveryNew.Models.User
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="glass-card p-4 text-white">
+            <h2 class="text-center mb-4">@Localizer["Title"]</h2>
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <div class="mb-3">
+                    <label asp-for="Username" class="form-label">@Localizer["Username"]</label>
+                    <input asp-for="Username" class="form-control glass-input" placeholder="@Localizer["UsernamePlaceholder"]" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label">@Localizer["Password"]</label>
+                    <input asp-for="Password" class="form-control glass-input" placeholder="@Localizer["PasswordPlaceholder"]" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg shadow-sm">@Localizer["Register"]</button>
+                    <a asp-action="Login" class="btn btn-outline-light">@Localizer["AlreadyHaveAccount"]</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

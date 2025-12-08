@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>Delicious Food, <br/> Delivered To Your Door</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Experience the best local delivery service. Fresh, hot, and fast.</value>
+  </data>
+  <data name="OrderNow" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="Feature1Title" xml:space="preserve">
+    <value>Fast Delivery</value>
+  </data>
+  <data name="Feature1Desc" xml:space="preserve">
+    <value>We promise to deliver your food within 30 minutes or it's free.</value>
+  </data>
+  <data name="Feature2Title" xml:space="preserve">
+    <value>Fresh Ingredients</value>
+  </data>
+  <data name="Feature2Desc" xml:space="preserve">
+    <value>We work with the best local farms to ensure high quality.</value>
+  </data>
+  <data name="Feature3Title" xml:space="preserve">
+    <value>24/7 Support</value>
+  </data>
+  <data name="Feature3Desc" xml:space="preserve">
+    <value>Our team is always here to help you with any questions.</value>
+  </data>
+</root>

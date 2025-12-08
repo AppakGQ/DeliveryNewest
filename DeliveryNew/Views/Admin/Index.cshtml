@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Админ Панель";
+}
+
+<div class="container mt-4 animate__animated animate__fadeIn">
+    <h1 class="text-white mb-4">Панель Администратора</h1>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="glass-card p-4 text-white text-center h-100">
+                <i class="bi bi-box-seam display-4 mb-3"></i>
+                <h3>Товары</h3>
+                <p class="display-6 fw-bold">@ViewData["TotalItems"]</p>
+                <a asp-controller="Orders" asp-action="Index" class="btn btn-outline-light mt-2">Управление</a>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="glass-card p-4 text-white text-center h-100">
+                <i class="bi bi-people display-4 mb-3"></i>
+                <h3>Пользователи</h3>
+                <p class="display-6 fw-bold">@ViewData["TotalUsers"]</p>
+                <button class="btn btn-outline-light mt-2 disabled">Управление</button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="glass-card p-4 text-white text-center h-100">
+                <i class="bi bi-receipt display-4 mb-3"></i>
+                <h3>Заказы</h3>
+                <p class="display-6 fw-bold">0</p>
+                <button class="btn btn-outline-light mt-2 disabled">Скоро</button>
+            </div>
+        </div>
+    </div>
+</div>

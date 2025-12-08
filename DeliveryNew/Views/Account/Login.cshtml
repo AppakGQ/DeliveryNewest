@@ -1,0 +1,31 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="glass-card p-4 text-white">
+            <h2 class="text-center mb-4">@Localizer["Title"]</h2>
+            <form asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                
+                <div class="mb-3">
+                    <label class="form-label">@Localizer["Username"]</label>
+                    <input type="text" name="username" class="form-control glass-input" placeholder="@Localizer["UsernamePlaceholder"]" />
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">@Localizer["Password"]</label>
+                    <input type="password" name="password" class="form-control glass-input" placeholder="@Localizer["PasswordPlaceholder"]" />
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg shadow-sm">@Localizer["SignIn"]</button>
+                    <a asp-action="Register" class="btn btn-outline-light">@Localizer["CreateAccount"]</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>Вкусная еда, <br/> Доставка к Вашей Двери</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Воспользуйтесь лучшей местной службой доставки. Свежие, горячие и быстрые блюда.</value>
+  </data>
+  <data name="OrderNow" xml:space="preserve">
+    <value>Заказывайте прямо сейчас</value>
+  </data>
+  <data name="Feature1Title" xml:space="preserve">
+    <value>Быстрая доставка</value>
+  </data>
+  <data name="Feature1Desc" xml:space="preserve">
+    <value>Мы обещаем доставить вам еду в течение 30 минут или бесплатно.</value>
+  </data>
+  <data name="Feature2Title" xml:space="preserve">
+    <value>Свежие ингредиенты</value>
+  </data>
+  <data name="Feature2Desc" xml:space="preserve">
+    <value>Мы работаем с лучшими местными фермами, чтобы обеспечить высокое качество.</value>
+  </data>
+  <data name="Feature3Title" xml:space="preserve">
+    <value>24/7 Поддержка</value>
+  </data>
+  <data name="Feature3Desc" xml:space="preserve">
+    <value>Наша команда всегда готова помочь вам с любыми вопросами.</value>
+  </data>
+</root>
