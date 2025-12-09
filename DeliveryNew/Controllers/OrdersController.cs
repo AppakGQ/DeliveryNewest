@@ -8,6 +8,7 @@ using Microsoft.Extensions.Localization;
 namespace DeliveryNew.Controllers
 {
     [Authorize] // Auth required for all actions
+    // This controller manages DeliveryItems (Products) - confusingly named OrdersController by legacy.
     public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,9 +21,11 @@ namespace DeliveryNew.Controllers
         }
 
         // GET: Orders
+        // Lists all available products/items.
         [AllowAnonymous] // Allow viewing without login
         public async Task<IActionResult> Index()
         {
+            // Initializes the list of delivery items from database
             return View(await _context.DeliveryItems.ToListAsync());
         }
 
@@ -45,12 +48,14 @@ namespace DeliveryNew.Controllers
         }
 
         // GET: Orders/Create
+        // Shows the form to create a new product.
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: Orders/Create
+        // Handles the submission of the new product form.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,IsAvailable,CreatedAt,ImageUrl")] DeliveryItem item)

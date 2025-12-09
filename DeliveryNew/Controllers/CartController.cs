@@ -5,6 +5,7 @@ using DeliveryNew.Extensions;
 
 namespace DeliveryNew.Controllers
 {
+    // Manages the Shopping Cart using Session storage.
     public class CartController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -14,18 +15,23 @@ namespace DeliveryNew.Controllers
             _context = context;
         }
 
+        // Display the Cart contents.
         public IActionResult Index()
         {
+            // Retrieves the 'Cart' object from the Session (or creates a new one).
             var cart = HttpContext.Session.Get<Cart>("Cart") ?? new Cart();
             return View(cart);
         }
 
+        // Adds an item to the cart.
         [Microsoft.AspNetCore.Authorization.Authorize]
         public async Task<IActionResult> AddToCart(int id)
         {
+            // Find the item in Database.
             var item = await _context.DeliveryItems.FindAsync(id);
             if (item != null)
             {
+                // Get Cart from session, add item, and save back to session.
                 var cart = HttpContext.Session.Get<Cart>("Cart") ?? new Cart();
                 cart.AddItem(item, 1);
                 HttpContext.Session.Set("Cart", cart);

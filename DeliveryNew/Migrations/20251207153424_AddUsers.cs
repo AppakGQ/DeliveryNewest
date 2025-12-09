@@ -12,6 +12,7 @@ namespace DeliveryNew.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            // Changing 'CreatedAt' column type to 'timestamp without time zone' for better compatibility.
             migrationBuilder.AlterColumn<DateTime>(
                 name: "CreatedAt",
                 table: "DeliveryItems",
@@ -20,14 +21,18 @@ namespace DeliveryNew.Migrations
                 oldClrType: typeof(DateTime),
                 oldType: "timestamp with time zone");
 
+            // Creating 'Users' table for authentication.
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    // Username for login
                     Username = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    // Password (stored as plain text currently? should be hashed ideally)
                     Password = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    // User Role (e.g. "Admin", "User")
                     Role = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>

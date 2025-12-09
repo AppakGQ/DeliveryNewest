@@ -10,6 +10,8 @@ namespace DeliveryNew.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            // Adding 'ImageUrl' column to 'DeliveryItems' table.
+            // This allows storing the path to the product image.
             migrationBuilder.AddColumn<string>(
                 name: "ImageUrl",
                 table: "DeliveryItems",
