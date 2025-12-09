@@ -14,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews(options =>
 {
+    // Registering the GlobalActionFilter to apply to ALL controllers and actions in the application.
+    // This filter logs the start and end of every action execution.
     options.Filters.Add<GlobalActionFilter>();
 })
 .AddViewLocalization()
@@ -63,9 +65,17 @@ else
 app.UseHttpsRedirection();
 
 // Custom Middleware
-app.UseRequestLogging();
+// Custom Middleware
+// Deprecated: Moved 'app.UseRequestLogging()' below 'app.UseStaticFiles()' for better location in pipeline
+// app.UseRequestLogging();
 
 app.UseStaticFiles();
+
+// Using the custom RequestLoggingMiddleware.
+// This middleware logs every incoming HTTP request (Method + Path) and the response Status Code.
+// It is placed early in the pipeline (but after static files) to capture requests reaching the application logic.
+app.UseRequestLogging(); 
+
 app.UseSession(); // Enable Session Middleware
 app.UseRouting();
 
