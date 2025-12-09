@@ -74,7 +74,7 @@ app.UseStaticFiles();
 // Using the custom RequestLoggingMiddleware.
 // This middleware logs every incoming HTTP request (Method + Path) and the response Status Code.
 // It is placed early in the pipeline (but after static files) to capture requests reaching the application logic.
-app.UseRequestLogging(); 
+//app.UseRequestLogging(); 
 
 app.UseSession(); // Enable Session Middleware
 app.UseRouting();

@@ -12,7 +12,7 @@ namespace DeliveryNew.Middleware
             _next = next;
             _logger = logger;
         }
-
+            
         // The core logic of the middleware.
         public async Task InvokeAsync(HttpContext context)
         {
